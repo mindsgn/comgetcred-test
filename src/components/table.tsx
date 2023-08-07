@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   TableContainer,
   Table,
-  TableCaption,
+  Heading,
   Tr,
   Thead,
   Th,
@@ -73,9 +73,9 @@ export const CoinMarketData = ({ openModal }: { openModal: any }) => {
 
   return (
     <Box>
+      <Heading>Cryptocurrency Data</Heading>
       <TableContainer>
         <Table variant="simple">
-          <TableCaption>Coin Market Cap Data</TableCaption>
           <Thead>
             <Tr>
               <Th>Rank</Th>

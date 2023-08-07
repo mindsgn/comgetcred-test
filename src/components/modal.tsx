@@ -10,6 +10,7 @@ import {
   Button,
   Box,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 
 export const TokenModal = ({
@@ -21,9 +22,10 @@ export const TokenModal = ({
   isOpen: any;
   onClose: any;
 }) => {
-  const { name, description, market_cap_rank, symbol } = data;
+  const { name, description, market_cap_rank, symbol, market_data } = data;
   const { en: englishDescription } = description;
-
+  const { market_cap, circulating_supply, max_supply, total_supply } =
+    market_data;
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -32,20 +34,33 @@ export const TokenModal = ({
         <ModalCloseButton />
         <ModalBody>
           <Box>
-            <Text>Symbol: {symbol}</Text>
-            <Text>Rank: {market_cap_rank}</Text>
-            <Text>Rank: {market_cap_rank}</Text>
-          </Box>
-          <Box>
-            <Text>{englishDescription}</Text>
+            <Box padding={2}>
+              <Heading size="sm">Symbol</Heading>
+              <Text>{symbol}</Text>
+            </Box>
+            <Box padding={2}>
+              <Heading size="sm">Rank</Heading>
+              <Text>{market_cap_rank}</Text>
+            </Box>
+            <Box padding={2}>
+              <Heading size="sm">Rank</Heading>
+              <Text>{market_cap_rank}</Text>
+            </Box>
+            <Box padding={2}>
+              <Heading size="sm">Circulating Supply</Heading>
+              <Text>{`${circulating_supply} ${symbol}`} </Text>
+            </Box>
+            <Box padding={2}>
+              <Heading size="sm">total Supply</Heading>
+              <Text>{`${total_supply} ${symbol}`} </Text>
+            </Box>
+
+            <Box padding={2}>
+              <Heading size="sm">Description</Heading>
+              <Text noOfLines={10}>{englishDescription}</Text>
+            </Box>
           </Box>
         </ModalBody>
-
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
-          </Button>
-        </ModalFooter>
       </ModalContent>
     </Modal>
   );
