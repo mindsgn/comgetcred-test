@@ -25,7 +25,7 @@ export const CoinMarketData = ({ openModal }: { openModal: any }) => {
   };
 
   const [startIndex, setStartIndex] = useState<number>(0);
-  const [endIndex, setEndIndex] = useState<number>(0);
+  const [endIndex, setEndIndex] = useState<number>(2);
 
   const getData = async () => {
     try {

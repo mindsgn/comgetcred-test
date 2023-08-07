@@ -34,6 +34,7 @@ export const TokenModal = ({
           <Box>
             <Text>Symbol: {symbol}</Text>
             <Text>Rank: {market_cap_rank}</Text>
+            <Text>Rank: {market_cap_rank}</Text>
           </Box>
           <Box>
             <Text>{englishDescription}</Text>
